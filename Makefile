@@ -1,2 +1,2 @@
 zip:
-	zip function.zip app src
+	zip function.zip bootstrap handler.sh src/*
