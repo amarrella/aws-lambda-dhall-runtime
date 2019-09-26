@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  dhall-app
+  
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  DhallFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler
+      Runtime: provided
+      CodeUri: 'function.zip'
+      Description: >
+        A simple dhall function
