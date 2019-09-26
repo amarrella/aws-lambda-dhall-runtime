@@ -9,3 +9,5 @@ For example the example function can be run with:
 `sam local invoke -e events/john.dhall`
 or 
 `sam local invoke -e events/jane.dhall`
+
+**Status: not production ready! It's probably possible to inject malicious code in the input right now, so use just for fun and don't give the lambda any permissions.**
