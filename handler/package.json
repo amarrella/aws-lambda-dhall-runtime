@@ -1,0 +1,9 @@
+{
+  "name": "dhall-lambda-handler",
+  "version": "1.0.0",
+  "description": "Dhall Lambda Handler",
+  "main": "app.js",
+  "repository": "https://github.com/amarrella/aws-lambda-dhall-runtime",
+  "author": "SAM CLI",
+  "license": "MIT"
+}

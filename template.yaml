@@ -11,8 +11,33 @@ Resources:
   DhallFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: handler
-      Runtime: provided
-      CodeUri: 'function.zip'
+      Handler: app.dhallHandler
+      Runtime: nodejs10.x
+      CodeUri: handler/
+      Layers:
+        - !Ref DhallLayer
       Description: >
         A simple dhall function
+      Environment:
+        XDG_CACHE_HOME: /tmp
+
+  DhallLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: sam-app-dependencies
+      Description: Dhall dependencies
+      ContentUri: dhall.zip
+      CompatibleRuntimes:
+        - nodejs10.x
+        - nodejs8.10
+        - python3.7
+        - python3.6
+        - python2.7
+        - ruby2.5
+        - java8
+        - go1.x
+        - dotnetcore2.1
+        - dotnetcore1.0
+        - provided
+      LicenseInfo: 'MIT'
+      RetentionPolicy: Retain
