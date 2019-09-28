@@ -1,1 +1,3 @@
-"jane"
+{
+    name = "jane"
+}

@@ -1,6 +1,6 @@
 let ordinaryUser =
           \(user : ./Input.dhall)
-      ->  let privateKey = "/home/${user}/.ssh/id_rsa"
+      ->  let privateKey = "/home/${user.name}/.ssh/id_rsa"
           
           let publicKey = "${privateKey}.pub"
           
